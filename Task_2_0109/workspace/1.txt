@@ -1,0 +1,20 @@
+** Copy by value **
+1. does only copy of value
+   Ex: var a = 2;
+       var b = a;
+       b = 3;
+       console.log(a, b) //2, 3
+2. Here changing value of b value does not affect a
+
+** Copy by reference **
+1. does copy address and value
+   Ex: var arr = [1, [2, 3]];
+       var arr1 = arr;
+       arr[1][2] = 4;
+       console.log(arr, arr1) //[1, [2, 3, 4]], [1, [2, 3, 4]]
+2. Here changing value of arr has affected arr1.
+
+
+How to copy by value for a composite data type
+slice() for arrays
+clone() for objects to just copy contents by value
