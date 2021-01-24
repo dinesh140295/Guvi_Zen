@@ -1,0 +1,107 @@
+IFFE Function Impelemntation
+
+//print the odd elements of array
+(function () {
+    let arr = [4, 7, 8, 6, 5];
+    for(let x=0; x<arr.length; x++) {
+        if(arr[x]%2 !== 0) {
+            console.log(arr[x]);
+        }
+    }
+})();
+
+//convert strings to caps of string array
+(function () {
+    let str_arr = ["Ravi", "SoMu", "Shyam", "SaI"];
+    for(let x=0; x<str_arr.length; x++) {
+        str_arr[x] = str_arr[x].toUpperCase();
+    }
+    console.log(str_arr);
+})();
+
+//sum of all numbers in an array
+(function () {
+    let num_arr = [4, 7, 8, 10, 12];
+    let sum = 0;
+    for(let x=0; x<num_arr.length; x++) {
+        sum+=num_arr[x];
+    }
+    console.log('sum = ' + sum);
+})();
+
+//return all primes in an array
+(function () {
+    let prime_arr = [15, 2, 3, 29, 41, 97];
+    let primes = [];
+    let count;
+    for(let x=0; x<prime_arr.length; x++) {
+        count = 0;
+        for(let y=1;  y<=prime_arr[x]; y++) {
+            if(prime_arr[x]%y === 0) {
+                count++;
+            }
+        }
+        if(count == 2) {
+            primes.push(prime_arr[x]);
+        }
+    }
+    console.log(primes);
+})();
+
+//return all palindromes in an array
+(function () {
+    let palindrome_arr = ['madam', 'teacher', 'tat', 'pop', 'tenet'];
+    let palindromes = [];
+    for(let x=0; x<palindrome_arr.length; x++) {
+        let str_arr = palindrome_arr[x].split('');
+        let rev_str = str_arr.reverse().join('');
+        if(palindrome_arr[x] == rev_str) {
+            palindromes.push(palindrome_arr[x]);
+        }
+    }
+    console.log(palindromes);
+})();
+
+
+//return median of two sorted arrays of equal size
+(function () {
+    let arr1 = [2, 3, 6, 7, 8, 10, 15];
+    let arr2 = [1, 4, 5, 6, 18];
+    
+    for(let x=0; x<arr1.length; x++) {
+        for(let y=0; y<arr2.length-1; y++) {
+            if(arr1[x] > arr2[y] && arr1[x] < arr2[y+1]) {
+                //push arr1[x] between arr1[y] and arr2[y+1]
+            }
+        }
+    }
+})();
+
+//remove duplicates in an array
+(function () {
+    let arr_num = [1, 2, 5, 6, 5 ,9 ,1];
+    let result = [];
+    for(let x=0; x<arr_num.length; x++) {
+        if(arr_num[x] != 'x') {
+            result.push(arr_num[x]);
+        }
+        for(let y=x+1; y<arr_num.length; y++) {
+            if(arr_num[y] == arr_num[x]) {
+                arr_num[y] = 'x';
+            }
+        }
+    }
+    console.log(result);
+})();
+
+//rotate by k times and return array
+(function () {
+    let k = 2;
+    let arr = [1, 2, 3, 4];
+    let arr1 = [];
+    for(let x=0; x<arr.length; x++) {
+            arr1[x] = arr[(x+2) % (arr.length)];
+    }
+    console.log(arr, arr1);
+})();
+
